@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/gonmin/business#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^1.0.1",
     "jquery": "^3.2.1",
+    "style-loader": "^0.18.2",
     "webpack": "^1.15.0"
   }
 }

@@ -2,14 +2,12 @@
 
 // console.log(cats);
 
-var $ = require('jquery');
+// var $$ = require('jquery');
 
-console.log('index');
+// $$('body').html('HELLO 龚明欢');
 
-$('body').html('HELLO INDEX');
+// console.log('双星情歌')
 
+require('../login/module.js');
 
-(function() {
-	console.log('index');
-
-})()
+require('./index.css');
