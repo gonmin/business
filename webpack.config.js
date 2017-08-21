@@ -4,6 +4,17 @@ var webpack = require('webpack');
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var getHtmlConfig = function (name) {
+	return {
+		template: './src/view/' + name +'.html',
+		filename: 'view/' + name + '.html',
+		inject: true,
+		hash: true,
+		chunks: ['common', name]
+	}
+}
  var config = {
 	entry: {
 		common: ['./src/page/common/index.js'],
@@ -19,6 +30,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 	},
 	 module: {
         loaders: [
+	        { test: /\.html$/, loader: "html" },
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") }
         ]
     },
@@ -28,7 +40,9 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 			name: 'common',
 			filename: 'js/base.js'
 		}),
-		new ExtractTextPlugin("css/[name].css")
+		new ExtractTextPlugin("css/[name].css"),
+		new HtmlWebpackPlugin(getHtmlConfig('index')),
+		new HtmlWebpackPlugin(getHtmlConfig('login'))
 	]
 }
 
