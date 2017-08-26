@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --color"
+    "build": "webpack --color",
+    "oldser": "webpack-dev-server --inline --prot 8088 --color",
+    "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --prot 8088 --color",
+    "dev2": " set WEBPACK_ENV=dev && webpack-dev-server --inline --prot 8088 --color",
+    "dist": "WEBPACK_ENV=online webpack -p",
+    "dist2": "set WEBPACK_ENV=online && webpack -p"
+
   },
   "repository": {
     "type": "git",

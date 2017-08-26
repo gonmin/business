@@ -6,6 +6,10 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+
+console.log(WEBPACK_ENV);
+
 var getHtmlConfig = function (name) {
 	return {
 		template: './src/view/' + name +'.html',
@@ -23,6 +27,7 @@ var getHtmlConfig = function (name) {
 	},
 	output: {
 		path: './dist',
+		publicPath: '/dist',
 		filename: 'js/[name].js'
 	},
 	externals: {
@@ -40,7 +45,7 @@ var getHtmlConfig = function (name) {
         ]
     },
 	plugins: [
-		new CleanWebpackPlugin(['dist']),
+		// new CleanWebpackPlugin(['dist']),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'common',
 			filename: 'js/base.js'
@@ -49,6 +54,10 @@ var getHtmlConfig = function (name) {
 		new HtmlWebpackPlugin(getHtmlConfig('index')),
 		new HtmlWebpackPlugin(getHtmlConfig('login'))
 	]
+}
+
+if ('dev' === WEBPACK_ENV) {
+	config.entry.common.push('webpack-dev-server/client?http://localhost:8088/')
 }
 
 module.exports = config;
