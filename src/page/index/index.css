@@ -1,3 +1,4 @@
 body {
-	background-color: red;
+	background: url(../../image/timg.jpg);
+	background-size: 1000px 500px;
 }

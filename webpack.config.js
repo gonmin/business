@@ -31,6 +31,11 @@ var getHtmlConfig = function (name) {
 	 module: {
         loaders: [
 	        { test: /\.html$/, loader: "html" },
+	        { test: /\.(woff|woff2|eot|ttf|otf)$/, loader: "file-loader?limit=50&name=resource/[name].[ext]" },
+
+	        { test: /\.(png|jpg|gif)$/, loader: "file-loader?limit=50&name=resource/[name].[ext]" },
+
+	        { test: /\.(png|jpg|gif)$/, loader: "url-loader?limit=50&name=resource/[name].[ext]" },
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") }
         ]
     },
