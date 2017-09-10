@@ -63,7 +63,7 @@ var _mm = {
 
 	},
 	// 获取服务器地址
-	getServerUrl: function () {
+	getServerUrl: function (path) {
 		return conf.serverHost + path
 	},
 	getUrlParam: function (name) {
@@ -73,7 +73,7 @@ var _mm = {
 	},
 	// 统一登录处理
 	doLogin: function () {
-		window.location.href = './login.html?redirect=' + encodeURIComponenent(window.location.href); 
+		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href); 
 	},
 
 	// 回到主页

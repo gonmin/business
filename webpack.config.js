@@ -27,7 +27,7 @@ var getHtmlConfig = function (name) {
 	},
 	output: {
 		path: './dist',
-		publicPath: '/dist',
+		publicPath: '/dist/',
 		filename: 'js/[name].js'
 	},
 	externals: {
