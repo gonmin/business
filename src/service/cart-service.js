@@ -1,11 +1,10 @@
 var _mm = require('util/util')
 
 var  _cart = {
-	// 退出
+	// 获取购物车数量
 	getCartCount: function (resolve, reject) {
 		_mm.request({
-			url: _mm.getServerUrl('/user/logout.do'),
-			method: 'POST',
+			url: _mm.getServerUrl('/cart/get_cart_product_count.do'),
 			success: resolve,
 			error: reject
 		})
