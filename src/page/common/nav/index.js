@@ -19,7 +19,7 @@ var nav = {
 
 		// 注册点击事件
 		$('.js-register').click(function () {
-			window.location.href = './register.html'
+			window.location.href = './user-register.html'
 		})
 
 		// 点击退出

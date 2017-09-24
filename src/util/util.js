@@ -17,7 +17,7 @@ var _mm = {
 					typeof param.success === 'function' && param.success(res.data, res.msg)
 				} else if (res.status === 10) {
 					// 没有登陆状态，需要强制登录
-					// _this.doLogin();
+					_this.doLogin();
 				}
 				else if (res.status === 1) {
 					typeof param.error === 'function' && param.error(res.data, res.msg)
@@ -73,7 +73,7 @@ var _mm = {
 	},
 	// 统一登录处理
 	doLogin: function () {
-		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href); 
+		window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href); 
 	},
 
 	// 回到主页

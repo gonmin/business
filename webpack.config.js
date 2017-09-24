@@ -24,7 +24,8 @@ var getHtmlConfig = function (name, title) {
 	entry: {
 		common: ['./src/page/common/index.js'],
 		index: ['./src/page/index/index.js'],
-		login: ['./src/page/login/index.js'],
+		'user-login': ['./src/page/user-login/index.js'],
+		'user-register': ['./src/page/user-register/index.js'],
 		result: ['./src/page/result/index.js']
 	},
 	output: {
@@ -63,7 +64,8 @@ var getHtmlConfig = function (name, title) {
 		}),
 		new ExtractTextPlugin("css/[name].css"),
 		new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-		new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
 		new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
 
 	]
