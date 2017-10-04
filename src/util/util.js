@@ -20,7 +20,7 @@ var _mm = {
 					_this.doLogin();
 				}
 				else if (res.status === 1) {
-					typeof param.error === 'function' && param.error(res.data, res.msg)
+					typeof param.error === 'function' && param.error(res.msg)
 
 				}
 			},
@@ -38,11 +38,11 @@ var _mm = {
 	},
 	// 成功提示
 	successTips: function (msg) {
-		alert(mag || '操作成功');
+		alert(msg || '操作成功');
 	},
 	// 错误提示
 	errorTips: function (msg) {
-		alert(mag || '哪里不对了');
+		alert(msg || '哪里不对了');
 	},
 	// 字段的验证。支持非空，手机，邮箱判断
 	validate: function (value, type) {
