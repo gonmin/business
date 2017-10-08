@@ -8,7 +8,7 @@ var nav = {
 	init: function () {
 		this.bindEvent();
 		this.loadUserInfo();
-		this.loadCartCont();
+		this.loadCartCount();
 		return this;
 	},
 	bindEvent: function () {
@@ -41,7 +41,7 @@ var nav = {
 		});
 	},
 	// 加载购物车数量
-	loadCartCont: function () {
+	loadCartCount: function () {
 		_cart.getCartCount(function (res) {
 			$('.nav .cart-count').text(res || 0);
 		}, function(err) {
