@@ -43,7 +43,8 @@ var getHtmlConfig = function (name, title) {
 	},
 	output: {
 		path: __dirname + '/dist',
-		publicPath: WEBPACK_ENV === 'dev' ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
+		publicPath: '/dist/',
+		// publicPath: WEBPACK_ENV === 'dev' ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
 		filename: 'js/[name].js'
 	},
 	externals: {
