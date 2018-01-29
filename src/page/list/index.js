@@ -67,7 +67,6 @@ var page = {
 	// 加载list 数据
 	loadList: function () {
 		var listParam = this.data.listParam;
-		console.log(listParam);
 		var _this = this;
 		var listHtml = '';
 		$('.p-list-con').html('<div class="loading"></div>');

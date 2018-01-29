@@ -78,7 +78,6 @@ var page = {
 		result.status = true;
 		result.msg = '验证通过';
 		return result;
-
 	}
 }
 

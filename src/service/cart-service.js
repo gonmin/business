@@ -17,10 +17,6 @@ var  _cart = {
 			success: resolve,
 			error: reject
 		})
-<<<<<<< HEAD
-	}
-
-=======
 	},
 	// 获取购物车列表
 	getCartList: function (resolve, reject) {
@@ -90,8 +86,6 @@ var  _cart = {
 		})
 	}
 
-
->>>>>>> business
 }
 
 module.exports = _cart;

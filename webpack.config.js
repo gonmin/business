@@ -43,7 +43,8 @@ var getHtmlConfig = function (name, title) {
 	},
 	output: {
 		path: __dirname + '/dist',
-		publicPath: WEBPACK_ENV === 'dev' ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
+		publicPath: '/dist/',
+		// publicPath: WEBPACK_ENV === 'dev' ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
 		filename: 'js/[name].js'
 	},
 	externals: {
@@ -59,11 +60,8 @@ var getHtmlConfig = function (name, title) {
 	         	removeAttributeQuotes: false
 	         }
             },
-	        { test: /\.(woff|woff2|eot|ttf|otf)\??.*$/, loader: "file-loader?limit=50&name=resource/[name].[ext]" },
 
-	        { test: /\.(png|svg|jpg|gif)\??.*$/, loader: "file-loader?limit=50&name=resource/[name].[ext]" },
-
-	        { test: /\.(png|jpg|gif)\??.*$/, loader: "url-loader?limit=50&name=resource/[name].[ext]" },
+	        { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") }
         ]
     },
