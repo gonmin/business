@@ -19,6 +19,7 @@
 	font-size: 15px;
 	border: 2px solid #c60023;
 	outline: none;
+	box-sizing: content-box;
 }
 .header .search-con  .search-btn {
 	position: absolute;

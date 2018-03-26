@@ -101,21 +101,6 @@ var page = {
 			}, function (errMsg) {
 				_this.showCartError();
 			})
-			// 选中
-			if ($this.is(':checked')) {
-				_cart.selectAllProduct(function(res) {
-					_this.renderCart(res);
-				}, function (errMsg) {
-					_this.showCartError();
-				})
-			} else {
-				_cart.unselectAllProduct(function(res) {
-					_this.renderCart(res);
-				}, function (errMsg) {
-					_this.showCartError();
-				})
-			}
-
 		});
 
 		// 删除单个商品

@@ -49,7 +49,6 @@ var page = {
 				})
 			} else {
 				formError.show('请输入用户名');
-
 			}
 		});
 
@@ -66,6 +65,7 @@ var page = {
 				}, function(res) {
 					_this.data.answer = username;
 					_this.data.token = res;
+
 					_this.loadStepPassword();
 
 				}, function(errMsg) {
@@ -95,7 +95,6 @@ var page = {
 				})
 			} else {
 				formError.show('请输入不少于6位的新密码');
-
 			}
 		});
 
@@ -110,7 +109,10 @@ var page = {
 		formError.hide();
 		$('.step-username').hide()
 		.siblings('.step-question').show()
-		.find('.question').text(this.data.question);
+		.find('.question').text(this.data.question)
+		.siblings('input').val();
+		$('.step-question').find('.user-item-text')
+		.append('<p class="user-item-text">请输入密码提示问题答案：</p>')
 
 
 	},
